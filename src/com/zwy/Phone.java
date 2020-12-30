@@ -110,9 +110,7 @@ public class Phone implements Serializable {
 
 	//显示个人信息
 	public void showInfo(){
-		if (state == 1){
-			System.out.println(name + "\t\t\t" + phoneNum + "\t\t\t" + currentFee);
-		}
+		System.out.println(name + "\t\t\t" + phoneNum + "\t\t\t" + currentFee+ "\t\t\t" + getState());
 	}
 	//日期格式转为字符串格式
 	public static String getTime(Date date){

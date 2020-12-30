@@ -47,7 +47,7 @@ public class PhoneUtils {
 			if(phoneNum.equals(p.getPhoneNum()) ){
 				p.setState(0);// 修改用户状态为已注销
 				p.setUpdateDate(new Date());//更新修改时间
-				System.out.println("删除成功");
+				System.out.println("注销成功");
 				return true;
 			}
 		}
@@ -70,7 +70,7 @@ public class PhoneUtils {
 	}
 	//显示所有信息
 	public void getAllInfo(){
-		System.out.println("持卡人姓名\t电话号码\t\t\t\t当前话费");
+		System.out.println("持卡人姓名\t电话号码\t\t\t\t当前话费\t当前状态");
 		list.forEach(Phone::showInfo);
 	}
 
@@ -111,7 +111,7 @@ public class PhoneUtils {
 		return (int)(Math.random()*(end-start+1)+start);
 	}
 	private static String[] telFirst="134,135,136,137,138,139,150,151,152,157,158,159,130,131,132,155,156,133,153".split(",");
-	private static String getTel() {
+	public static String getTel() {
 		int index=getNum(0,telFirst.length-1);
 		String first=telFirst[index];
 		String second=String.valueOf(getNum(1,888)+10000).substring(1);
@@ -126,6 +126,8 @@ public class PhoneUtils {
 		try {
 			fw = new FileWriter(fileUrl,true);
 			BufferedWriter bw = new BufferedWriter(fw);
+			bw.write("姓名\t\t\t电话号码\t\t\t当前话费\t\t\t运营商" +
+					"\t\t\t开户时间\t\t\t当前状态");
 			for (Phone p: list) {
 				bw.write(p.exportInfo());
 				bw.newLine();

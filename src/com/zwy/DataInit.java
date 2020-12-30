@@ -21,13 +21,13 @@ public class DataInit {
         Phone p1 = new Phone("15890632278" , 58.8,
                 "zwy",getDateTime("2020-06-22 15:26:33"),
                 getDateTime("2020-06-22 15:26:33"),getOperater());
-		Phone p2 = new Phone("15890632278" , 58.8,
+		Phone p2 = new Phone(PhoneUtils.getTel(), 32.5,
                 "zfj",getDateTime("2020-08-24 12:44:43"),
                 getDateTime("2020-08-24 12:44:43"),getOperater());
-		Phone p3 = new Phone("15890632278" , 58.8,
+		Phone p3 = new Phone(PhoneUtils.getTel() , 15.3,
                 "cx",getDateTime("2020-05-12 15:26:45"),
                 getDateTime("2020-05-12 15:26:45"),getOperater());
-		Phone p4 = new Phone("15890632278" , 58.8,
+		Phone p4 = new Phone(PhoneUtils.getTel() , 22.6,
                 "dhf",getDateTime("2020-11-23 14:34:13"),
                 getDateTime("2020-11-23 14:34:13"),getOperater());
 		list.add(p1);
@@ -65,13 +65,12 @@ public class DataInit {
         return object;
     }
 
+    //随机生成运营商
     public static String getOperater(){
         String[] doc = {"电信", "移动", "联通"};
         int index = (int) (Math.random() * doc.length);
         return doc[index];
     }
-
-
 
 	public static Date getDateTime(String dateStr){
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

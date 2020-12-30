@@ -26,14 +26,13 @@ public class PhoneSystem {
     static PhoneUtils utils = new PhoneUtils(list);
     static Scanner sc = new Scanner(System.in);
     //超级管理员账号信息
-    String adminUser = "zzz";
-    String adminPwd = "111";
+    static String adminUser = "zzz";
+    static String adminPwd = "111";
     //普通管理员账号信息
-    String user = "www";
-    String pwd = "222";
+    static String user = "www";
+    static String pwd = "222";
 
-
-
+    //超级管理员流程
     public static void adminUser() throws Exception {
         System.out.println("***************超级管理员登陆成功**************");
         while (true){
@@ -61,7 +60,7 @@ public class PhoneSystem {
                     System.out.println("请从以下号码中挑选：");
                     while (true){
                         PhoneUtils.getPhoneNumber();
-                        System.out.println("是否继续（y / n）");
+                        System.out.println("是否继续下一页（y / n）");
                         String ifCon = sc.next();
                         if ("n".equals(ifCon)){
                             break;
@@ -107,6 +106,7 @@ public class PhoneSystem {
         }
     }
 
+    //普通管理员流程
     public static void user() throws Exception {
         System.out.println("***************普通管理员登陆成功**************");
         while (true){
@@ -143,7 +143,7 @@ public class PhoneSystem {
         }
     }
 
-
+    //系统开始
     public static void start() throws Exception {
         System.out.println("***************欢迎使用话费充值系统**************");
         while (true){
@@ -156,17 +156,17 @@ public class PhoneSystem {
                     for (int i = 0; i < 3; i++) {
                         System.out.println("请输入登陆的用户名：");
                         String u = sc.next();
-                        if ("zzz".equals(u)){
+                        if (adminUser.equals(u)){
                             System.out.println("请输入登陆的密码：");
                             String p = sc.next();
-                            if ("111".equals(p)){
+                            if (adminPwd.equals(p)){
                                 adminUser();
                             }
                             System.out.println("密码错误！");
-                        }else if ("www".equals(u)){
+                        }else if (user.equals(u)){
                             System.out.println("请输入登陆的密码：");
                             String p = sc.next();
-                            if ("222".equals(p)){
+                            if (pwd.equals(p)){
                                 user();
                             }
                             System.out.println("密码错误！");
@@ -186,7 +186,6 @@ public class PhoneSystem {
             }
         }
     }
-
 
     public static void main(String[] args) throws Exception {
         start();
