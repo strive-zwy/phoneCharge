@@ -35,7 +35,7 @@ public class PhoneSystem {
 
     //超级管理员流程
     public static void adminUser() throws Exception {
-        System.out.println("***************超级管理员登陆成功**************");
+        System.out.println("***************超级管理员登录成功**************");
         while (true){
             System.out.println("1.查看系统所有信息");
             System.out.println("2.查看指定用户信息");
@@ -110,7 +110,7 @@ public class PhoneSystem {
 
     //普通管理员流程
     public static void user() throws Exception {
-        System.out.println("***************普通管理员登陆成功**************");
+        System.out.println("***************普通管理员登录成功**************");
         while (true){
             System.out.println("1.查看系统所有信息");
             System.out.println("2.查看指定用户信息");
