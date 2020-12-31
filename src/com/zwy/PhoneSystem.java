@@ -35,7 +35,7 @@ public class PhoneSystem {
     public static void systemSleep(String msg) throws InterruptedException {
         System.out.print(msg);
         for (int i = 0; i < 6; i++) {
-            Thread.sleep(500);
+            Thread.sleep((long)(Math.random() * 500));
             System.out.print("·");
         }
         System.out.println();
@@ -204,6 +204,7 @@ public class PhoneSystem {
                     String phoneNumber = sc.next();
                     System.out.println("输入充值的数额：");
                     double fee = sc.nextDouble();
+                    systemSleep("充值中");
                     utils.addPhoFee(phoneNumber,fee);
                     break;
                 case "3":
