@@ -16,7 +16,7 @@ import java.util.*;
 
 public class DataInit {
 
-	public static List<Phone> PhoneInit(){
+	/*public static List<Phone> PhoneInit(){
         List<Phone> list = new ArrayList<Phone>();
         Phone p1 = new Phone("15890632278" , 58.8,
                 "zwy",getDateTime("2020-06-22 15:26:33"),
@@ -35,7 +35,7 @@ public class DataInit {
 		list.add(p3);
 		list.add(p4);
 		return list;
-	}
+	}*/
 
     // 保存对象，序列化
     public static void saveObject(Object object) throws Exception {
@@ -83,10 +83,10 @@ public class DataInit {
         return date;
     }
 
-    public static void main(String[] args) throws Exception {
+    /*public static void main(String[] args) throws Exception {
         saveObject(PhoneInit());
         List<Phone>  list = (List<Phone>) DataInit.readObject();
         list.forEach(Phone::showAllInfo);
-    }
+    }*/
 
 }
