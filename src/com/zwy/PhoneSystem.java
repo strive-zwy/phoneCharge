@@ -166,7 +166,7 @@ public class PhoneSystem {
 
     //系统开始
     public static void start() throws Exception {
-        System.out.println("***************欢迎使用话费充值系统**************");
+        System.out.println("***************欢迎使用话费充值信息管理系统**************");
         while (true){
             System.out.println("1.管理员登录系统");
             System.out.println("2.用户话费充值");
