@@ -1,6 +1,5 @@
 package com.zwy;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
@@ -157,17 +156,17 @@ public class PhoneSystem {
             switch (mun){
                 case 1:
                     for (int i = 0; i < 3; i++) {
-                        System.out.println("请输入登陆的用户名：");
+                        System.out.println("请输入登录的用户名：");
                         String u = sc.next();
                         if (adminUser.equals(u)){
-                            System.out.println("请输入登陆的密码：");
+                            System.out.println("请输入登录的密码：");
                             String p = sc.next();
                             if (adminPwd.equals(p)){
                                 adminUser();
                             }
                             System.out.println("密码错误！");
                         }else if (user.equals(u)){
-                            System.out.println("请输入登陆的密码：");
+                            System.out.println("请输入登录的密码：");
                             String p = sc.next();
                             if (pwd.equals(p)){
                                 user();
