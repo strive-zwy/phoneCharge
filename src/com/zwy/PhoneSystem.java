@@ -193,7 +193,7 @@ public class PhoneSystem {
                             }
                             System.out.println("密码错误！");
                         }else {
-                            System.out.println("密码或用户名错误，请重新登录！");
+                            System.out.println("用户名错误，请重新登录！");
                         }
                     }
                     System.out.println("3次登录机会已用完，系统退出！");
