@@ -91,7 +91,7 @@ public class PhoneUtils {
 		for(Phone p : list){
 			if(phoneNum.equals(p.getPhoneNum())){
 				p.addFee(fee);
-				System.out.println("充值成功！");
+				System.out.println("充值成功！当前余额为：" + p.getCurrentFee());
 				return true;
 			}
 		}
