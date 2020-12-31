@@ -89,7 +89,11 @@ public class Phone implements Serializable {
 	}
 
 	public void addFee(double fee){
-		currentFee = currentFee + fee;
+		if (fee > 0){
+			currentFee = currentFee + fee;
+			return;
+		}
+		System.out.println("充值数额输入错误！");
 	}
 
 	//显示全部详细信息
@@ -110,7 +114,7 @@ public class Phone implements Serializable {
 
 	//显示个人信息
 	public void showInfo(){
-		System.out.println(name + "\t\t\t" + phoneNum + "\t\t\t" + currentFee+ "\t\t\t" + getState());
+		System.out.println(name + "\t\t\t" + phoneNum + "\t\t\t" + currentFee+ "\t\t" + getState());
 	}
 	//日期格式转为字符串格式
 	public static String getTime(Date date){

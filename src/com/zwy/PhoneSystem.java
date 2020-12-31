@@ -23,7 +23,8 @@ public class PhoneSystem {
             e.printStackTrace();
         }
     }
-    static PhoneUtils utils = new PhoneUtils(list);
+    //实例化工具类对象
+    static PhoneUtils utils = PhoneUtils.getInstance(list);
     static Scanner sc = new Scanner(System.in);
     //超级管理员账号信息
     static String adminUser = "zzz";
@@ -98,6 +99,7 @@ public class PhoneSystem {
                     break;
                 case 8:
                     DataInit.saveObject(utils.getList());
+                    System.out.println("系统退出！");
                     System.exit(0);
                 default:
                     System.out.println("操作失误，请重新输入！");
@@ -135,6 +137,7 @@ public class PhoneSystem {
                     break;
                 case 4:
                     DataInit.saveObject(utils.getList());
+                    System.out.println("系统退出！");
                     System.exit(0);
                 default:
                     System.out.println("操作失误，请重新输入！");
@@ -179,6 +182,7 @@ public class PhoneSystem {
                     System.exit(0);
                 case 2:
                     DataInit.saveObject(utils.getList());
+                    System.out.println("系统退出！");
                     System.exit(0);
                 default:
                     System.out.println("操作失误，请重新输入！");

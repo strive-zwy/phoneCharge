@@ -15,19 +15,20 @@ import java.util.List;
  **/
 
 public class PhoneUtils {
+
 	private List<Phone> list;
+	private static PhoneUtils utils;
 
 	public List<Phone> getList() {
 		return list;
 	}
 
-	public void setList(List<Phone> list) {
-		this.list = list;
-	}
-
-	public PhoneUtils(List<Phone> list) {
-		super();
-		this.list = list;
+	//单例模式 - 懒汉式
+	public synchronized static PhoneUtils getInstance(List<Phone> list){
+		if (utils == null)
+			utils = new PhoneUtils();
+			utils.list = list;
+			return utils;
 	}
 
 	//添加信息
@@ -70,7 +71,7 @@ public class PhoneUtils {
 	}
 	//显示所有信息
 	public void getAllInfo(){
-		System.out.println("持卡人姓名\t电话号码\t\t\t\t当前话费\t当前状态");
+		System.out.println("持卡人姓名\t电话号码\t\t\t\t当前话费\t\t当前状态");
 		list.forEach(Phone::showInfo);
 	}
 
