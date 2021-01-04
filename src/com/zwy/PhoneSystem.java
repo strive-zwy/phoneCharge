@@ -72,7 +72,7 @@ public class PhoneSystem {
                     System.out.println("请从以下号码中挑选：");
                     while (true){
                         PhoneUtils.getPhoneNumber();
-                        System.out.println("是否继续下一页（y / n）");
+                        System.out.println("是否继续下一页 （n 结束，任意键继续）");
                         String ifCon = sc.next();
                         if ("n".equals(ifCon)){
                             break;
