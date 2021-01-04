@@ -129,6 +129,7 @@ public class PhoneUtils {
 			BufferedWriter bw = new BufferedWriter(fw);
 			bw.write("姓名\t\t\t电话号码\t\t\t当前话费\t\t\t运营商" +
 					"\t\t\t开户时间\t\t\t当前状态");
+			bw.newLine();
 			for (Phone p: list) {
 				bw.write(p.exportInfo());
 				bw.newLine();
