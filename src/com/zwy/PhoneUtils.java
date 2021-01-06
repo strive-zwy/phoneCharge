@@ -101,7 +101,6 @@ public class PhoneUtils {
 
 	//随机生成一组（5个）手机号码
 	public static void getPhoneNumber(){
-		List<String> list = new ArrayList<>();
 		for (int i = 0; i < 5; i++) {
 			System.out.println(getTel());
 		}
