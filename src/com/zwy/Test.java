@@ -2,16 +2,10 @@ package com.zwy;
 
 /**
  * @Author ：zwy
- * @Date ：2020/12/29 8:42
+ * @Date ：2021/1/7 11:02
  * @Version ：1.0
- * @Description ：TODO
+ * @Description ：测试
  **/
 
 public class Test {
-
-    public static void main(String[] args) {
-        System.out.println(00000);
-        System.out.println(00000);
-        System.out.println(11111);
-    }
 }
