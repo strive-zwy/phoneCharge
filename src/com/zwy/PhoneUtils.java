@@ -3,7 +3,6 @@ package com.zwy;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -27,47 +26,44 @@ public class PhoneUtils {
 	public synchronized static PhoneUtils getInstance(List<Phone> list){
 		if (utils == null)
 			utils = new PhoneUtils();
-			utils.list = list;
-			return utils;
+		utils.list = list;
+		return utils;
 	}
 
 	//添加信息
-	public boolean addPho(Phone pho){
+	public void addPho(Phone pho){
 		if(list.contains(pho)){
 			System.out.println("该信息已存在");
-			return false;
+			return;
 		}
 		list.add(pho);
 		System.out.println("添加成功");
-		return true;
 	}
 
 	//删除（修改用户状态）
-	public boolean deletePhoById(String phoneNum){
+	public void deletePhoById(String phoneNum){
 		for(Phone p : list){
 			if(phoneNum.equals(p.getPhoneNum()) ){
 				p.setState(0);// 修改用户状态为已注销
 				p.setUpdateDate(new Date());//更新修改时间
 				System.out.println("注销成功");
-				return true;
+				return;
 			}
 		}
 		System.out.println("该信息不存在");
-		return false;
 	}
 
 	//修改用户信息
-	public boolean updatePho(String phoneNum,String PhName){
+	public void updatePho(String phoneNum, String PhName){
 		for(Phone p : list){
 			if(phoneNum.equals(p.getPhoneNum())){
 				p.setName(PhName);
 				p.setUpdateDate(new Date());
 				System.out.println("修改成功");
-				return true;
+				return;
 			}
 		}
 		System.out.println("该信息不存在");
-		return false;
 	}
 	//显示所有信息
 	public void getAllInfo(){
@@ -87,21 +83,19 @@ public class PhoneUtils {
 	}
 
 	//充值话费
-	public boolean addPhoFee(String phoneNum , double fee){
+	public void addPhoFee(String phoneNum , double fee){
 		for(Phone p : list){
 			if(phoneNum.equals(p.getPhoneNum())){
 				p.addFee(fee);
 				System.out.println("充值成功！当前余额为：" + p.getCurrentFee());
-				return true;
+				return;
 			}
 		}
-		System.out.println("充值失败！");
-		return false;
+		System.out.println("充值失败！该手机号不在该系统中。");
 	}
 
 	//随机生成一组（5个）手机号码
 	public static void getPhoneNumber(){
-		List<String> list = new ArrayList<>();
 		for (int i = 0; i < 5; i++) {
 			System.out.println(getTel());
 		}
@@ -128,7 +122,8 @@ public class PhoneUtils {
 			fw = new FileWriter(fileUrl,true);
 			BufferedWriter bw = new BufferedWriter(fw);
 			bw.write("姓名\t\t\t电话号码\t\t\t当前话费\t\t\t运营商" +
-					"\t\t\t开户时间\t\t\t当前状态");
+					"\t\t\t开户时间\t\t\t\t当前状态");
+			bw.newLine();
 			for (Phone p: list) {
 				bw.write(p.exportInfo());
 				bw.newLine();

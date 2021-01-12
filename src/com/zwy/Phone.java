@@ -78,6 +78,7 @@ public class Phone implements Serializable {
 		this.operator = operator;
 	}
 
+	//带参数的构造方法
 	public Phone(String phoneNum, double currentFee, String name, Date startDate,
 				 Date updateDate, String operator) {
 		this.phoneNum = phoneNum;
@@ -88,6 +89,7 @@ public class Phone implements Serializable {
 		this.operator = operator;
 	}
 
+	//充话费
 	public void addFee(double fee){
 		if (fee > 0){
 			currentFee = currentFee + fee;
