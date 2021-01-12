@@ -22,7 +22,7 @@ public class DataInit {
 		Phone p2 = new Phone(PhoneUtils.getTel(), 32.5,
                 "zfj",getDateTime("2020-08-24 12:44:43"),
                 getDateTime("2020-08-24 12:44:43"),getOperater());
-		Phone p3 = new Phone(PhoneUtils.getTel() , 15.3,
+		Phone p3 = new Phone("15037856340" , 15.3,
                 "cx",getDateTime("2020-05-12 15:26:45"),
                 getDateTime("2020-05-12 15:26:45"),getOperater());
 		Phone p4 = new Phone(PhoneUtils.getTel() , 22.6,
@@ -70,7 +70,7 @@ public class DataInit {
         return doc[index];
     }
 
-	public static Date getDateTime(String dateStr){
+	/*public static Date getDateTime(String dateStr){
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = null;
         try {
@@ -81,7 +81,7 @@ public class DataInit {
         return date;
     }
 
-    /*public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         saveObject(PhoneInit());
         List<Phone>  list = (List<Phone>) DataInit.readObject();
         list.forEach(Phone::showAllInfo);

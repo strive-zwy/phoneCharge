@@ -26,8 +26,8 @@ public class PhoneUtils {
 	public synchronized static PhoneUtils getInstance(List<Phone> list){
 		if (utils == null)
 			utils = new PhoneUtils();
-			utils.list = list;
-			return utils;
+		utils.list = list;
+		return utils;
 	}
 
 	//添加信息
