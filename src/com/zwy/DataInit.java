@@ -14,26 +14,6 @@ import java.util.*;
 
 public class DataInit {
 
-	/*public static List<Phone> PhoneInit(){
-        List<Phone> list = new ArrayList<Phone>();
-        Phone p1 = new Phone("15890632278" , 58.8,
-                "zwy",getDateTime("2020-06-22 15:26:33"),
-                getDateTime("2020-06-22 15:26:33"),getOperater());
-		Phone p2 = new Phone(PhoneUtils.getTel(), 32.5,
-                "zfj",getDateTime("2020-08-24 12:44:43"),
-                getDateTime("2020-08-24 12:44:43"),getOperater());
-		Phone p3 = new Phone("15037856340" , 15.3,
-                "cx",getDateTime("2020-05-12 15:26:45"),
-                getDateTime("2020-05-12 15:26:45"),getOperater());
-		Phone p4 = new Phone(PhoneUtils.getTel() , 22.6,
-                "dhf",getDateTime("2020-11-23 14:34:13"),
-                getDateTime("2020-11-23 14:34:13"),getOperater());
-		list.add(p1);
-		list.add(p2);
-		list.add(p3);
-		list.add(p4);
-		return list;
-	}*/
 
     // 保存对象，序列化
     public static void saveObject(Object object) throws Exception {
@@ -70,7 +50,29 @@ public class DataInit {
         return doc[index];
     }
 
-	/*public static Date getDateTime(String dateStr){
+
+/*public static List<Phone> PhoneInit(){
+        List<Phone> list = new ArrayList<Phone>();
+        Phone p1 = new Phone(PhoneUtils.getTel() , 58.8,
+                "zwy",getDateTime("2020-06-22 15:26:33"),
+                getDateTime("2020-06-22 15:26:33"),getOperater());
+		Phone p2 = new Phone(PhoneUtils.getTel(), 32.5,
+                "zfj",getDateTime("2020-08-24 12:44:43"),
+                getDateTime("2020-08-24 12:44:43"),getOperater());
+		Phone p3 = new Phone("15037856340" , 15.3,
+                "cx",getDateTime("2020-05-12 15:26:45"),
+                getDateTime("2020-05-12 15:26:45"),getOperater());
+		Phone p4 = new Phone(PhoneUtils.getTel() , 22.6,
+                "dhf",getDateTime("2020-11-23 14:34:13"),
+                getDateTime("2020-11-23 14:34:13"),getOperater());
+		list.add(p1);
+		list.add(p2);
+		list.add(p3);
+		list.add(p4);
+		return list;
+	}
+
+	public static Date getDateTime(String dateStr){
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = null;
         try {

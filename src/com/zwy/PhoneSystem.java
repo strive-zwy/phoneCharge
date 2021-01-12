@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class PhoneSystem {
 
-    //读取 TXT 文档中的数据
+    //从 TXT文档中读取数据
     static List<Phone> list;
     static {
         try {
@@ -178,21 +178,21 @@ public class PhoneSystem {
                     for (int i = 0; i < 3; i++) {
                         System.out.println("请输入登录的用户名：");
                         String u = sc.next();
-                        if (adminUser.equals(u)){
+                        if (adminUser.equals(u)){ // 判断是否为超级管理员用户名
                             System.out.println("请输入登录的密码：");
                             String p = sc.next();
                             if (adminPwd.equals(p)){
-                                adminUser();
+                                adminUser(); // 用户名和密码都对进入超级管理员流程
                             }
                             System.out.println("密码错误！");
-                        }else if (user.equals(u)){
+                        }else if (user.equals(u)){ // 判断是否是普通管理员用户名
                             System.out.println("请输入登录的密码：");
                             String p = sc.next();
                             if (pwd.equals(p)){
-                                user();
+                                user(); // 用户名和密码都对进入普通管理员流程
                             }
                             System.out.println("密码错误！");
-                        }else {
+                        }else { //都不是则需重新输入，但只有 3 次机会，3 次之后系统退出
                             System.out.println("用户名错误，请重新登录！");
                         }
                     }
